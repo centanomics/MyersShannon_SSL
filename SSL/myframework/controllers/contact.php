@@ -48,9 +48,9 @@
                 // } else {
                 //     echo 'valid text';
                 // }
+                // echo $forminput;
 
-                $email = $_POST('email');
-                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
                     $emailErr = "Invalid email format"; 
                     echo $emailErr;
                 } else {

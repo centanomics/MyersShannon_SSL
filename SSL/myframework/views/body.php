@@ -61,4 +61,20 @@
 
     </div>
 
+<!-- <script>
+
+$("#ajaxsubmit").click(function() {
+
+  $.ajax({
+    method: 'POST',
+    url: '/progress/ajaxPars',
+    data: {email: $('#username').val(), password: $("#password").val()},
+    sucess: function (msg) {
+      if(msg=="welcome"){}else{}
+    }
+  });
+
+});
+
+</script> -->
 <!-- <div>Testing</div> -->

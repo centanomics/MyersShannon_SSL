@@ -30,9 +30,13 @@
         }
 
         public function loginForm() {
-            var_dump($_REQUEST);
-            $this->parent->getView("footer");
+            echo "<h1 class='mt-4'>&nbsp;</h1>";
+            foreach($_REQUEST as $key=>$forminput){
+                echo $forminput.'<br/>';
+            }
+            // $this->parent->getView("footer");
         }
+
     }
 
 ?>
