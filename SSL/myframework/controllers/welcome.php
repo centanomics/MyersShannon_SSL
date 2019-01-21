@@ -21,7 +21,7 @@
 
             $data = array();
             $data["pagename"] = "Home";
-            $data["navigation"] = array("Home" => "/", "Modal" => "/modals", "Carousel" => "/carousels", "Progress" => '/progess', "Contact" => "/contact");
+            $data["navigation"] = array("Home" => "/", "Assignment 5" => "/assn5", "Carousel" => "/carousels", "Progress" => '/progess', "Contact" => "/contact", "Ajax" => "/Ajax");
             $this->parent->getView('header');
             $this->parent->getView("navigation", $data);
             $this->parent->getView("body");
