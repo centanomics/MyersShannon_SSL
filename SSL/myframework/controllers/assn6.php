@@ -1,6 +1,6 @@
 <?php
 
-    class assn5 extends Appcontroller {
+    class assn6 extends Appcontroller {
 
         public function __construct($parent) {
 
@@ -20,12 +20,12 @@
         public function index() {
 
             $data = array();
-            $data["pagename"] = "Assignment 5";
+            $data["pagename"] = "Assignment 6";
             $data["navigation"] = $this->parent->nav;
             $this->getView('header');
             $this->getView("navigation", $data);
             $random = substr( md5(rand()), 0, 7);
-            $this->getView("assn5", array("cap"=>$random));
+            $this->getView("assn6", array("cap"=>$random));
             // echo 'home';
             $this->getView("footer");
 
@@ -44,29 +44,30 @@
         public function contactRecv(){
 
             $data = array();
-            $data["pagename"] = "Assignment 5";
+            $data["pagename"] = "Assignment 6";
             $data["navigation"] = $this->parent->nav;
             $this->getView('header');
             $this->getView("navigation", $data);
+
+            $_SESSION['files'] = file('./assets/loginInfo.txt');
+            echo '<br><br><br>';
+            // var_dump($_SESSION['files']);
             
             if($_POST["captcha"]==$_SESSION['captchas']){
             
-                if(!filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)){
-                // if($_POST['email'] != 'mike123@aol.com'){
-                    
-                    $_SESSION['loggedin'] = 0;
-                    echo "<br>Email invalid";
-                    
-                    echo "<br><a href='/assn5'>Click here to go back</a>";
-                
-                }else{
-                
-                    // echo "<br><br>".$_POST['email'];
-                    // echo "<br>Email valid";
-                    $_SESSION['loggedin'] = 1;
-                    header('Location:/carousels');
-                    
-                
+                $index = 0;
+                foreach($_SESSION['files'] as $test) {
+                    $info = explode("|", $test);
+                    $index++;
+                    // echo '<br>';
+                    // var_dump($info);
+                    if($_POST['email'] === $info[0] && $_POST['password'] === $info[1]) {
+                        $_SESSION['loggedin'] = 1;
+                        $_SESSION['userInfo'] = $info[2];
+                        header('Location:/carousels');
+                    } else if (sizeof($info) == $index) {
+                        $_SESSION['loggedin'] = 0;
+                    }
                 }
             
             }else{
@@ -74,7 +75,7 @@
                 $_SESSION['loggedin'] = 0;
                 echo "<br><br><br>Invalid captcha";
                 
-                echo "<br><a href='/assn5'>Click here to go back</a>";
+                echo "<br><a href='/assn6'>Click here to go back</a>";
             
             }
             

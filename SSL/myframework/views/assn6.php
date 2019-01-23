@@ -2,18 +2,18 @@
 <!-- <h1 class="mt-5">Hello</h1> -->
 <div class="container">
 
-<form action="/assn5/contactRecv" method="POST">
+<form action="/assn6/contactRecv" method="POST">
     <div class="form-group">
         <?
             if(@$_SESSION['loggedin'] == 0) {echo '<small id="emailHelp" class="text-warning">Login Failed</small><br>';}
         ?>
         <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
     </div>
 <?
 

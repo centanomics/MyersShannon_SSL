@@ -10,7 +10,7 @@
             $this->parent=$parent;
             $data = array();
             $data["pagename"] = "Form";
-            $data["navigation"] = array("Home" => "/welcome/about", "Form" => "/forms", "About" => "/about");
+            $data["navigation"] = $this->parent->nav;
             $this->parent->getView('header');
             $this->parent->getView("navigation", $data);
 

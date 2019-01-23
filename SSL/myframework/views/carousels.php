@@ -1,11 +1,17 @@
 <div class="container"> 
 
      
-      <h1 class="my-4 mt-5">Carousels
-        <small>How do they work</small>
-      </h1>
+      <h1 class="my-4 mt-5">Profile</h1>
 
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <?
+      
+        if($_SESSION['userInfo']) {
+          echo '<p>'.$_SESSION['userInfo'].'</p>';
+        }
+
+      ?>
+
+      <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -30,6 +36,6 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
+      </div> -->
 
 </div>

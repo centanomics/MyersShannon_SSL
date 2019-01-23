@@ -11,7 +11,7 @@
             if($_SESSION['loggedin'] && $_SESSION['loggedin'] == 1) {
                 $this->parent=$parent;
             } else {
-                header('Location:/assn5');
+                header('Location:/assn6');
             }
 
             
@@ -23,9 +23,9 @@
         public function index() {
 
             $data = array();
-            $data["pagename"] = "Carousel";
+            $data["pagename"] = "Profile";
             // $data["url"] = $parent->urlPathParts[0];
-            $data["navigation"] = array("Home" => "/", "Assignment 5" => "/assn5", "Carousel" => "/carousels", "Progress" => '/progess', "Contact" => "/contact", "Ajax" => "/Ajax");
+            $data["navigation"] = $this->parent->nav;
             $this->parent->getView('header');
             $this->parent->getView("navigation", $data);
 
