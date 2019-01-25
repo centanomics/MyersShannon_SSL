@@ -7,9 +7,9 @@ class AppController{
     public function __construct($urlPathParts,$config)
     {
 
-        //$this->db = new PDO("mysql:dbname=".$config["dbname"].";",$config["dbuser"],$config["dbpass"]);
+        $this->db = new PDO("mysql:dbname=".$config["dbname"].";",$config["dbuser"],$config["dbpass"]);
       
-        $this->nav = array("Home" => "/", "Assignment 6" => "/assn6", "Profile" => "/carousels", "Progress" => '/progess', "Contact" => "/contact", "Ajax" => "/Ajax", "Uploads" => "uploads");
+        $this->nav = array("Home" => "/", "Assignment 7" => "/assn7", "Profile" => "/carousels", "Progress" => '/progess', "Contact" => "/contact", "Ajax" => "/Ajax", "Uploads" => "uploads");
         $this->urlPathParts = $urlPathParts;
 
 
