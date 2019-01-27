@@ -9,7 +9,7 @@ class AppController{
 
         $this->db = new PDO("mysql:dbname=".$config["dbname"].";",$config["dbuser"],$config["dbpass"]);
       
-        $this->nav = array("Home" => "/", "Assignment 7" => "/assn7", "Profile" => "/carousels", "Progress" => '/progess', "Contact" => "/contact", "Ajax" => "/Ajax", "Uploads" => "uploads");
+        $this->nav = array("Home" => "/", "Assignment 7" => "/assn7", "Profile" => "/carousels", "Progress" => '/progess', "Contact" => "/contact", "Ajax" => "/Ajax", "Uploads" => "/uploads", "Api" => "/api");
         $this->urlPathParts = $urlPathParts;
 
 
